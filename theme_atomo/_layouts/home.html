@@ -1,0 +1,33 @@
+{% include base.html %}
+
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: " en " }}">
+
+<head>
+  {% include head.html %}
+</head>
+
+<body>
+  {% include atomo_header.html %}
+
+    <div class="atomo_content">
+      <ul class="atomo_post_list">
+          {% for post in site.posts %}
+          {% if post.tags contains 'comics' %}
+          <li>
+            <div class="atomo_item">
+              <a class="post-link" href="{{base}}{{ post.url }}">
+                    <img src="{{ post.comic | remove: '
+                    <p>' | remove: '</p>' | replace: 'BASE', base }}" class="atomo_comic_item"/>
+              </a>
+            </div>
+          </li>
+
+          {%  endif %}
+          {% endfor %}
+      </ul>
+    </div>
+</body>
+
+
+</html>

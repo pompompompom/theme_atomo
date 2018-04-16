@@ -1,0 +1,32 @@
+{% include base.html %}
+
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: " en " }}">
+
+<head>
+    {% include head.html %}
+</head>
+
+<body>
+
+    {% include header.html %}
+    <div class="about_container">
+      <img class="about_pic thankyou" src="{{base}}/assets/allofus.png" />
+
+        <div class="about_text thankyou">
+            <div class="about_title">
+                Thank You For Subscribing!
+            </div>
+            <div class="about_content">
+                Wanna say hi?
+            </div>
+            <div class="about_email">
+                sealiconvalley@gmail.com
+            </div>
+        </div>
+
+    </div>
+    {% include footer.html %}
+</body>
+
+</html>

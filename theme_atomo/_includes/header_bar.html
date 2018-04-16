@@ -1,0 +1,105 @@
+{% include base.html %}
+
+
+    <div class="header_bar_container">
+        <div class="header_bar">
+          {% if page.url contains 'blog.html' or page.url contains 'characters.html' or page.url contains 'about.html' or page.url contains '/comic/' or page.url contains '/blog/' %}
+            <div class="logo_header_bar">
+                <a href="{{base}}">
+                    <div class="header_logo">
+                    </div>
+                </a>
+            </div>
+            <div class="social_container_small">
+                <a href="https://www.instagram.com/sealiconvalley/" target="_blank">
+                    <div class="social_img_small social_ig">
+                    </div>
+                </a>
+                <a href="https://www.facebook.com/sealiconvalley/" target="_blank">
+                    <div class="social_img_small social_fb">
+                    </div>
+                </a>
+                <a href="https://twitter.com/sealiconvalley" target="_blank">
+                <div class="social_img_small social_twitter">
+                </div>
+              </a>
+              <a href="https://www.snapchat.com/add/sealiconvalley" target="_blank">
+                <div class="social_img_small social_snap">
+                </div>
+              </a>
+                <a href="http://sealiconvalley.tumblr.com/">
+                <div class="social_img_small social_tumblr" target="_blank">
+                </div>
+              </a>
+            </div>
+            {% else %}
+            <div class="logo_header_bar home_logo_header_bar">
+                <a href="{{base}}">
+                    <div class="header_logo">
+                    </div>
+                </a>
+            </div>
+
+            <div class="social_container_small home_social_container_small">
+                <a href="https://www.instagram.com/sealiconvalley/" target="_blank">
+                    <div class="social_img_small social_ig">
+                    </div>
+                </a>
+                <a href="https://www.facebook.com/sealiconvalley/" target="_blank">
+                    <div class="social_img_small social_fb">
+                    </div>
+                </a>
+                <a href="https://twitter.com/sealiconvalley" target="_blank">
+                <div class="social_img_small social_twitter">
+                </div>
+              </a>
+              <a href="https://www.snapchat.com/add/sealiconvalley" target="_blank">
+                <div class="social_img_small social_snap">
+                </div>
+              </a>
+                <a href="http://sealiconvalley.tumblr.com/" target="_blank">
+                <div class="social_img_small social_tumblr">
+                </div>
+              </a>
+            </div>
+            {% endif %}
+            <div class="menu_header_bar">
+                <a href="{{base}}">
+                    <div class="menu_header_text_wrapper">
+                        {% if page.url contains 'blog.html' or page.url contains 'characters.html' or page.url contains 'about.html' %}
+                        <div class="menu_header_text">Comic</div>
+                        {% else %}
+                        <div class="menu_header_text_current">Comic</div>
+                        {% endif %}
+                    </div>
+                </a>
+                <a href="{{base}}/blog.html">
+                    <div class="menu_header_text_wrapper">
+                        {% if page.url contains 'blog.html' %}
+                        <div class="menu_header_text_current">Blog</div>
+                        {% else %}
+                        <div class="menu_header_text">Blog</div>
+                        {% endif %}
+                    </div>
+                </a>
+                <a href="{{base}}/characters.html">
+                    <div class="menu_header_text_wrapper">
+                        {% if page.url contains 'characters.html' %}
+                        <div class="menu_header_text_current">Characters</div>
+                        {% else %}
+                        <div class="menu_header_text">Characters</div>
+                        {% endif %}
+                    </div>
+                </a>
+                <a href="{{base}}/about.html">
+                    <div class="menu_header_text_wrapper">
+                        {% if page.url contains 'about.html' %}
+                        <div class="menu_header_text_current">About</div>
+                        {% else %}
+                        <div class="menu_header_text">About</div>
+                        {% endif %}
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
