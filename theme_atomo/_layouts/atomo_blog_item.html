@@ -1,0 +1,42 @@
+{% include base.html %}
+
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: " en " }}">
+
+<head>
+    {% include head.html %}
+</head>
+
+<body>
+    {% include atomo_header.html %}
+
+    <div class="atomo_content">
+       <div class="atomo_blog_container">
+
+        <div class="blog_item_title_container">
+            <div class="blog_item_title">
+
+                    {{ page.title }}
+            </div>
+            <div class="blog_item_date">
+
+                    {{ page.date | date: "%B %-d, %Y"}}
+            </div>
+        </div>
+
+        <div class="blog_item_text">
+
+        {{ content | replace: 'BASE', base }}
+        </div>
+        
+        <div class="share_this">
+            Share this:
+        </div>
+        {% include atomo_share.html %}
+       </div>
+       <div class="blog_share_container">
+
+       </div>
+    </div>
+    {% include atomo_footer.html %}
+</body>

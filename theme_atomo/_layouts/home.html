@@ -103,23 +103,7 @@
                 </div>
                 {% endif %}
 
-                <div class="post_share_container">
-                  <a href="#">
-                    <img src="{{base}}/assets/atomo_ins.png" class="comic_share_social" />
-                  </a>
-                  <a href="#">
-                    <img src="{{base}}/assets/atomo_fb.png" class="comic_share_social" />
-                  </a>
-                  <a href="#">
-                    <img src="{{base}}/assets/atomo_twitter.png" class="comic_share_social" />
-                  </a>
-                  <a href="#">
-                    <img src="{{base}}/assets/atomo_snap.png" class="comic_share_social" />
-                  </a>
-                  <a href="#">
-                    <img src="{{base}}/assets/atomo_reddit.png" class="comic_share_social" />
-                  </a>
-                </div>
+                {% include atomo_share.html %}
                 <!--
               <a class="post-link" href="{{base}}{{ post.url }}">
               -->

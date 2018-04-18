@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: atomo_blog_item
 title:  "Hello World"
 date:   2017-03-14 01:17:15 -0800
 preview: BASE/assets/1_1.svg
