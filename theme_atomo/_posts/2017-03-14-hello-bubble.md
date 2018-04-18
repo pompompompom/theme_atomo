@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: comic
 title:  "Hello Bubble"
 date:   2018-04-15 00:00:01 -0800
 preview: BASE/assets/ep1.png

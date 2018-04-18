@@ -218,11 +218,6 @@ body {
   margin-right:6px;
 }
 
-.atomo_footer {
-  height: 100px;
-  background-color: #00B0F5;
-}
-
 /* Comic Navigation Start */
 .comic_nav_container {
   width: 100%;
@@ -245,4 +240,25 @@ body {
   margin-right:10px;
   margin-top: 20px;
   margin-bottom: 20px;
+}
+
+.comic_nav_link {
+  color: white;
+}
+/* Footer Start */
+.atomo_footer {
+  height: 100px;
+  background-color: #00B0F5;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: 1px;
+}
+
+.golden_gate {
+  margin-left:auto;
+  margin-right:auto;
+  width: 50%;
+  display:block;
+  margin-bottom:-40px;
 }

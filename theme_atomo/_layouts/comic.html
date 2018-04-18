@@ -9,34 +9,35 @@
 
 <body>
 
-  {% include atomo_header.html %}
-  
+        {% include atomo_header.html %}
+        
   {% assign relevant = site.posts | where:"categories","comic" %} {% assign first_post = site.posts | where:"first","true"
-  %} {% for post in relevant limit:1 %}
+  %}
+  {% for post in relevant limit:1 %}
 
-  {% assign previous_post = post.previous %}
+  {% assign previous_post = page.previous %}
   {% for counter in (0..site.posts.size) %}
-    {% assign previous_post = post.previous %}
-    {% if previous_post.categories == post.categories %}
+    {% assign previous_post = page.previous %}
+    {% if previous_post.categories == page.categories %}
         {% break %}
     {% endif %}
     {% assign previous_post = previous_post.previous %}
   {% endfor %}
-  {% if previous_post.categories != post.categories %}
+  {% if previous_post.categories != page.categories %}
     {% assign previous_post = page %}
   {% endif %}
 
 
-  {% assign next_post = post.next %}
+  {% assign next_post = page.next %}
   {% for counter in (0..site.posts.size) %}
-    {% assign next_post = post.next %}
-    {% if next_post.categories == post.categories %}
+    {% assign next_post = page.next %}
+    {% if next_post.categories == page.categories %}
         {% break %}
     {% endif %}
     {% assign next_post = next_post.next %}
   {% endfor %}
-  {% if next_post.categories != post.categories %}
-    {% assign next_post = post %}
+  {% if next_post.categories != page.categories %}
+    {% assign next_post = page %}
   {% endif %}
 
   <div class="comic_nav_container">
@@ -78,11 +79,11 @@
                   I, ATOMO
                 </div>
                 <div class="atomo_episode_title">
-                  {{ post.title }}
+                  {{ page.title }}
                 </div>
 
                 <div class="comic_container">
-                  {% for pic in post.pictures %}
+                  {% for pic in page.pictures %}
                   <div class="comic_image_item">
                     <img src="{{ pic | remove: '
                 <p>' | remove: '</p>' | replace: 'BASE', base }}" class="atomo_comic_item" />
@@ -90,9 +91,9 @@
                   {% endfor %}
                 </div>
 
-                {% if post.readmore != NULL %}
+                {% if page.readmore != NULL %}
                 <div class="read_more">
-                  <img src="{{BASE}}/assets/poppy_pink_shirt.svg" class="read_more_poppy_pic" /> {% for readmore_post in site.posts %} {% if post.readmore contains readmore_post.title and readmore_post.categories
+                  <img src="{{BASE}}/assets/poppy_pink_shirt.svg" class="read_more_poppy_pic" /> {% for readmore_post in site.posts %} {% if page.readmore contains readmore_post.title and readmore_post.categories
                   contains "blog" %}
                   <a href='{{base}}{{readmore_post.url}}'>
                     <div class="read_more_text">
@@ -120,22 +121,11 @@
                     <img src="{{base}}/assets/atomo_reddit.png" class="comic_share_social" />
                   </a>
                 </div>
-                <!--
-              <a class="post-link" href="{{base}}{{ post.url }}">
-              -->
-                <!--
-                    <img src="{{ post.comic | remove: '
-                    <p>' | remove: '</p>' | replace: 'BASE', base }}" class="atomo_comic_item"/>
-                  -->
-                <!--
-              </a>
-            -->
               </div>
             </li>
 
           </ul>
         </div>
-
 
         <div class="comic_nav_container">
             <a href='{{base}}{{relevant.last.url}}' class="comic_nav_link">
