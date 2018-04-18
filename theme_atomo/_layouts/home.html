@@ -10,7 +10,7 @@
 <body>
 
   {% include atomo_header.html %}
-  
+
   {% assign relevant = site.posts | where:"categories","comic" %} {% assign first_post = site.posts | where:"first","true"
   %} {% for post in relevant limit:1 %}
 
@@ -169,11 +169,8 @@
               </div>
 
               {% endfor %}
-              <img src="{{base}}/assets/golden_gate.png" class="golden_gate" />
 
-              <div class="atomo_footer">
-                © 2018 ATOMO.AI. All Rights Reserved.
-              </div>
+              {% include atomo_footer.html %}
 </body>
 
 

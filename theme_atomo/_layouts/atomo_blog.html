@@ -1,0 +1,35 @@
+{% include base.html %}
+
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: " en " }}">
+
+<head>
+    {% include head.html %}
+</head>
+
+<body>
+    {% include atomo_header.html %}
+
+    <div class="atomo_content">
+        <ul class="atomo_blog_list">
+
+            {% assign relevant = site.posts | where:"categories","blog" %} {% for post in relevant %}
+            <li>
+                <div class="atomo_blog_item">
+                        <a href="{{base}}{{ post.url }}">
+                        <img class="blog_preview_image" src="{{ post.preview | remove: '
+                        <p>' | remove: '</p>' | replace: 'BASE', base }}" />
+                        </a>
+
+                    <a href="{{base}}{{ post.url }}">
+                        <div class="blog_title">
+                            {{ post.title }}
+                        </div>
+                    </a>
+                </div>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+    {% include atomo_footer.html %}
+</body>
