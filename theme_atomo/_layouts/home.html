@@ -36,7 +36,8 @@
       </div>
     </div>
   </div>
-
+  {% assign relevant = site.posts | where:"categories","comic" %}
+  
   <div class="comic_nav_container">
     <div class="comic_nav_item">
       First
@@ -54,8 +55,7 @@
 
   <div class="atomo_content">
     <ul class="atomo_post_list">
-        {% assign maxPost = 1 %} {% assign maxPostCounter = 0 %}
-      {% for post in site.posts %} {% if post.tags contains 'comics' %}
+       {% for post in relevant limit:1 %}
       <li>
         <div class="atomo_item">
           <div class="atomo_item_i_atomo">
@@ -76,32 +76,32 @@
 
           {% if post.readmore != NULL %}
           <div class="read_more">
-            <img src="{{BASE}}/assets/poppy_pink_shirt.svg" class="read_more_poppy_pic" />
-            {% for readmore_post in site.posts %} {% if post.readmore contains readmore_post.title and readmore_post.categories contains "blog" %}
+            <img src="{{BASE}}/assets/poppy_pink_shirt.svg" class="read_more_poppy_pic" /> {% for readmore_post in site.posts %} {% if post.readmore contains readmore_post.title and readmore_post.categories
+            contains "blog" %}
             <a href='{{base}}{{readmore_post.url}}'>
-            <div class="read_more_text">
-              READ MORE: {{ readmore_post.title }}
-            </div>
-          </a>
+              <div class="read_more_text">
+                READ MORE: {{ readmore_post.title }}
+              </div>
+            </a>
             {% endif %} {% endfor %}
           </div>
           {% endif %}
 
           <div class="post_share_container">
             <a href="#">
-              <img src="{{base}}/assets/atomo_ins.png" class="comic_share_social"/>
+              <img src="{{base}}/assets/atomo_ins.png" class="comic_share_social" />
             </a>
             <a href="#">
-              <img src="{{base}}/assets/atomo_fb.png" class="comic_share_social"/>
+              <img src="{{base}}/assets/atomo_fb.png" class="comic_share_social" />
             </a>
             <a href="#">
-              <img src="{{base}}/assets/atomo_twitter.png" class="comic_share_social"/>
+              <img src="{{base}}/assets/atomo_twitter.png" class="comic_share_social" />
             </a>
             <a href="#">
-              <img src="{{base}}/assets/atomo_snap.png" class="comic_share_social"/>
+              <img src="{{base}}/assets/atomo_snap.png" class="comic_share_social" />
             </a>
             <a href="#">
-              <img src="{{base}}/assets/atomo_reddit.png" class="comic_share_social"/>
+              <img src="{{base}}/assets/atomo_reddit.png" class="comic_share_social" />
             </a>
           </div>
           <!--
@@ -116,12 +116,8 @@
             -->
         </div>
       </li>
-      {% assign maxPostCounter = maxPostCounter | plus: 1 %}
-      {% if maxPostCounter >= maxPost %} 
-         {% break %} 
-     {% endif %} 
 
-      {% endif %} {% endfor %}
+      {% endfor %}
     </ul>
   </div>
 
