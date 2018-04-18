@@ -8,25 +8,126 @@
 </head>
 
 <body>
-  {% include atomo_header.html %}
 
-    <div class="atomo_content">
-      <ul class="atomo_post_list">
-          {% for post in site.posts %}
-          {% if post.tags contains 'comics' %}
-          <li>
-            <div class="atomo_item">
+  <div class="atomo_header">
+
+    <img src="{{base}}/assets/big_neuron.png" class="big_neuron_1" />
+    <img src="{{base}}/assets/big_neuron.png" class="big_neuron_2" />
+    <img src="{{base}}/assets/small_neuron.png" class="small_neuron_1" />
+    <img src="{{base}}/assets/small_neuron.png" class="small_neuron_2" />
+    <img src="{{base}}/assets/small_neuron.png" class="small_neuron_3" />
+
+    <img src="{{base}}/assets/logo_all_atomo.png" class="logo_all_atomo" />
+
+    <div class="menu_container_wrapper">
+      <div class="menu_container">
+        <img src="{{base}}/assets/atomo_logo.png" class="atomo_small_logo" />
+        <div class="menu_item_container">
+          <div class="menu_item">
+            Home
+          </div>
+          <div class="menu_item">
+            Home
+          </div>
+          <div class="menu_item">
+            Home
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="comic_nav_container">
+    <div class="comic_nav_item">
+      First
+    </div>
+    <div class="comic_nav_item">
+      Previous
+    </div>
+    <div class="comic_nav_item">
+      Next
+    </div>
+    <div class="comic_nav_item">
+      Latest
+    </div>
+  </div>
+
+  <div class="atomo_content">
+    <ul class="atomo_post_list">
+        {% assign maxPost = 1 %} {% assign maxPostCounter = 0 %}
+      {% for post in site.posts %} {% if post.tags contains 'comics' %}
+      <li>
+        <div class="atomo_item">
+          <div class="atomo_item_i_atomo">
+            I, ATOMO
+          </div>
+          <div class="atomo_episode_title">
+            {{ post.title }}
+          </div>
+
+          <div class="comic_container">
+            {% for pic in post.pictures %}
+            <div class="comic_image_item">
+              <img src="{{ pic | remove: '
+                <p>' | remove: '</p>' | replace: 'BASE', base }}" class="atomo_comic_item" />
+            </div>
+            {% endfor %}
+          </div>
+
+          {% if post.readmore != NULL %}
+          <div class="read_more">
+            <img src="{{BASE}}/assets/poppy_pink_shirt.svg" class="read_more_poppy_pic" />
+            {% for readmore_post in site.posts %} {% if post.readmore contains readmore_post.title and readmore_post.categories contains "blog" %}
+            <a href='{{base}}{{readmore_post.url}}'>
+            <div class="read_more_text">
+              READ MORE: {{ readmore_post.title }}
+            </div>
+          </a>
+            {% endif %} {% endfor %}
+          </div>
+          {% endif %}
+
+          <div class="post_share_container">
+            <a href="#">
+              <img src="{{base}}/assets/atomo_ins.png" class="comic_share_social"/>
+            </a>
+            <a href="#">
+              <img src="{{base}}/assets/atomo_fb.png" class="comic_share_social"/>
+            </a>
+            <a href="#">
+              <img src="{{base}}/assets/atomo_twitter.png" class="comic_share_social"/>
+            </a>
+            <a href="#">
+              <img src="{{base}}/assets/atomo_snap.png" class="comic_share_social"/>
+            </a>
+            <a href="#">
+              <img src="{{base}}/assets/atomo_reddit.png" class="comic_share_social"/>
+            </a>
+          </div>
+          <!--
               <a class="post-link" href="{{base}}{{ post.url }}">
+              -->
+          <!--
                     <img src="{{ post.comic | remove: '
                     <p>' | remove: '</p>' | replace: 'BASE', base }}" class="atomo_comic_item"/>
+                  -->
+          <!--
               </a>
-            </div>
-          </li>
+            -->
+        </div>
+      </li>
+      {% assign maxPostCounter = maxPostCounter | plus: 1 %}
+      {% if maxPostCounter >= maxPost %} 
+         {% break %} 
+     {% endif %} 
 
-          {%  endif %}
-          {% endfor %}
-      </ul>
-    </div>
+      {% endif %} {% endfor %}
+    </ul>
+  </div>
+
+  <div class="atomo_footer">
+    FOOTER
+  </div>
 </body>
 
 

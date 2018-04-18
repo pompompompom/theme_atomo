@@ -1,10 +1,20 @@
 ---
 layout: post
-title:  "Meet TG700"
+title:  "Hello Bubble"
 date:   2018-04-15 00:00:01 -0800
 preview: BASE/assets/ep1.png
 comic: BASE/assets/ep1.png
 categories: comic
+pictures: [
+BASE/assets/1_1.svg,
+BASE/assets/1_1.svg,
+BASE/assets/1_1.svg,
+BASE/assets/1_1.svg,
+BASE/assets/1_1.svg,
+BASE/assets/1_1.svg,
+BASE/assets/1_1.svg,
+BASE/assets/1_1.svg,
+]
 related: [
 "Octopus the Designer",
 "Dolphin the Engineer",

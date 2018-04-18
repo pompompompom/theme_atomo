@@ -137,7 +137,7 @@ body {
 .atomo_content {
   display: block;
   width:100%;
-  padding-top:50px;
+  margin-bottom:20px;
 }
 
 .atomo_item {
@@ -147,12 +147,101 @@ body {
   background-position: center;
   margin-left:auto;
   margin-right:auto;
-  padding:30px;
+  padding:50px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+.atomo_item_i_atomo {
+  color: #273238;
+  font-size: 40pt;
+  margin-left:auto;
+  margin-right:auto;
+  text-align: center;
+  letter-spacing: 4px;
+}
+
+.atomo_episode_title {
+  color: #273238;
+  font-size: 12pt;
+  margin-left:auto;
+  margin-right:auto;
+  text-align: center;
+  letter-spacing: 1px;
+  margin-top: 10px;
+  text-transform: uppercase;
 }
 
 .atomo_comic_item {
     max-width:100%;
     max-height:100%;
     vertical-align: middle;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+.comic_container {
+  display:flex;
+  flex-wrap:wrap;
+  justify-content: space-between;
+}
+
+.comic_image_item {
+  width: 340px;
+  margin-top:20px;
+}
+
+.read_more {
+  height: 100px;
+  margin-top:20px;
+  display:flex;
+  align-items: center;
+}
+
+.read_more_poppy_pic {
+  width: 80px;
+}
+
+.read_more_text {
+  margin-left: 10px;
+  color: #273238;
+  font-size:14pt;
+}
+
+.post_share_container {
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.comic_share_social {
+  width: 30px;
+  margin-left:6px;
+  margin-right:6px;
+}
+
+.atomo_footer {
+  height: 100px;
+  background-color: #00B0F5;
+}
+
+/* Comic Navigation Start */
+.comic_nav_container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.comic_nav_item {
+  background-image: url("hexagon.png");
+  width: 80px;
+  height: 80px;
+  line-height: 80px;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  text-align: center;
+  vertical-align: center;
+  margin-left: 10px;
+  margin-right:10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
