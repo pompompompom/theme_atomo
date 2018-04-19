@@ -368,3 +368,57 @@ body {
   margin-right:auto;
   align-self: center;
 }
+
+/* Start About */
+
+.about_wrapper {
+  display: flex;
+  margin-top: 50px;
+  flex-direction: column;
+  color: #273238;
+  width: 100%;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  letter-spacing: 1px;
+}
+
+.atomo_about_title {
+  font-size: 24pt;
+  margin-top: 20px;
+  margin-bottom:20px;
+}
+
+.atomo_about_text {
+  font-family: 'Open Sans', sans-serif;
+  line-height: 20px;
+}
+
+.about_social_row {
+  display:flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.atomo_subscribe_button {
+  background-image: url(subscribe_blue.svg);
+  width: 200px;
+  height:100px;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+}
+
+.atomo_sub_text {
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  width: 100%;
+}
+
+.about_social_row .comic_share_social {
+  height:50px;
+  width: 45px;
+}

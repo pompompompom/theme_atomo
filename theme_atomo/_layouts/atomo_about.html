@@ -1,0 +1,64 @@
+{% include base.html %}
+
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: " en " }}">
+
+<head>
+    {% include head.html %}
+</head>
+
+<body>
+    {% include atomo_header.html %}
+
+    <div class="atomo_content">
+        <div class="about_wrapper">
+            <img src="{{BASE}}/assets/atomo_array.svg" class="playground_construction" />
+            <div class="atomo_about_title">
+                Hi there!
+            </div>
+            <div class="atomo_about_text">
+                Welcome to the world of Atomos! Atomos are the future of robots. They are not only good at answering questions and lifting
+                heavy weights, but also are super smart emotionally.
+
+
+            </div>
+
+            <img src="{{BASE}}/assets/comic_levels.png" class="playground_construction" style="width: 30%; margin-top: 20px; margin-bottom: 20px;"
+            />
+
+            <div class="atomo_about_text">
+                TG700 is an Atomo. He is the latest generation Mall Assistant Atomo created by a group of super talented engineers. Like
+                his fellow Atomos, TG700 is also equipped with the latest and greatest Personality Engine. But he hasn't
+                quite learned how to behave around humans, and makes a lot of funny mistakes..
+                <br/>
+                <br/> This original webcomic is created by a group of Roboticists and AI Engineers who want to make learning Robotics
+                and AI simple for everyone. We hope that with these knowledge, everyone can build their own Atomo!
+            </div>
+            <div class="about_social_row">
+                <div class="atomo_subscribe_button">
+                    <div class="atomo_sub_text">
+                        Subscribe
+                    </div>
+                </div>
+                <div class="about_share_container">
+                <a href="#">
+                    <img src="{{base}}/assets/atomo_ins.png" class="comic_share_social" />
+                </a>
+                <a href="#">
+                    <img src="{{base}}/assets/atomo_fb.png" class="comic_share_social" />
+                </a>
+                <a href="#">
+                    <img src="{{base}}/assets/atomo_twitter.png" class="comic_share_social" />
+                </a>
+                <a href="#">
+                    <img src="{{base}}/assets/atomo_snap.png" class="comic_share_social" />
+                </a>
+                <a href="#">
+                    <img src="{{base}}/assets/atomo_reddit.png" class="comic_share_social" />
+                </a>
+            </div>
+            </div>
+        </div>
+    </div>
+    {% include atomo_footer.html %}
+</body>
