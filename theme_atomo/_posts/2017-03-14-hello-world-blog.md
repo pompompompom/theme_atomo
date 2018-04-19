@@ -13,7 +13,7 @@ related: [
 tags:
 - blog
 ---
-<img src="BASE/assets/blog_hello_world.png" />
+<img src="BASE/assets/construction.svg" />
 
 Hello everyone, welcome to Sealicon Valley!
 
