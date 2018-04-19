@@ -31,12 +31,18 @@ body {
   flex-direction: row;
   margin-left: auto;
   margin-right: auto;
+  align-items: center;
 }
 
 .atomo_small_logo {
   width: 140px;
   align-self: center;
 
+}
+
+.menu_small_logo_share {
+  display:flex;
+  align-items: center;
 }
 
 .menu_item_container {
@@ -422,3 +428,27 @@ body {
   height:50px;
   width: 45px;
 }
+
+/* Start Archives */
+.archive_container {
+  width: 70%;
+  max-width: 700px;
+  margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.archive_hyperlink {
+  color: #273238;
+}
+.archive_comic_title_item {
+  font-size: 20pt;
+}
+.archive_container li { background: #FFFFFF; 
+  height: 60px;
+  line-height: 60px;
+  vertical-align: center;
+  padding-left: 10px;
+}
+
+.archive_container li:nth-child(odd) { background: #f3f3f3; }

@@ -49,9 +49,11 @@
           <div class="comic_nav_item">
             < Previous </div>
         </a>
+        <a href='{{base}}/archives.html' class="comic_nav_link">
         <div class="comic_nav_item">
           Archives
         </div>
+      </a>
 
 
         {% if next_post.title == post.title %}
@@ -131,9 +133,12 @@
                 <div class="comic_nav_item">
                   < Previous </div>
               </a>
+
+        <a href='{{base}}/archives.html' class="comic_nav_link">
               <div class="comic_nav_item">
                 Archives
               </div>
+              </a>
       
       
               {% if next_post.title == post.title %}

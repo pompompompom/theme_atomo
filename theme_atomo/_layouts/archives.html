@@ -1,0 +1,31 @@
+{% include base.html %}
+
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: " en " }}">
+
+<head>
+    {% include head.html %}
+</head>
+
+<body>
+    {% include atomo_header.html %}
+
+    <div class="atomo_content">
+        <div class="archive_container">
+            <ul>
+
+                {% assign relevant = site.posts | where:"categories","comic" %} {% for post in relevant %}
+                <li>
+
+                    <a href="{{base}}{{ post.url }}" class="archive_hyperlink">
+                        <div class="archive_comic_title_item">
+                            {{ post.date | date: "%Y/%m/%-d"}}: {{ post.title }}
+                        </div>
+                    </a>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+    {% include atomo_footer.html %}
+</body>
