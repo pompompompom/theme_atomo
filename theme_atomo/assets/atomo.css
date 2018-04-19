@@ -354,3 +354,17 @@ body {
   margin-left:auto;
   margin-right:auto;
 }
+
+/* Start Playground */
+.construction_wrapper {
+  display: flex;
+  margin-top: 50px;
+}
+
+.playground_construction {
+  width: 100%;
+  max-width: 700px;
+  margin-left:auto;
+  margin-right:auto;
+  align-self: center;
+}

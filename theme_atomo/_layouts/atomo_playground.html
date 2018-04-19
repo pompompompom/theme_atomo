@@ -1,0 +1,19 @@
+{% include base.html %}
+
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: " en " }}">
+
+<head>
+    {% include head.html %}
+</head>
+
+<body>
+    {% include atomo_header.html %}
+
+    <div class="atomo_content">
+        <div class="construction_wrapper">
+        <img src="{{BASE}}/assets/construction.svg" class="playground_construction"/>
+    </div>
+    </div>
+    {% include atomo_footer.html %}
+</body>
