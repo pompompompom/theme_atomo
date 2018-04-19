@@ -17,11 +17,20 @@
                 {% assign relevant = site.posts | where:"categories","comic" %} {% for post in relevant %}
                 <li>
 
+                    {% if relevant.first == post %}
+                    <a href="{{base}}" class="archive_hyperlink">
+                            <div class="archive_comic_title_item">
+                                {{ post.date | date: "%Y/%m/%-d"}}: {{ post.title }}
+                            </div>
+                        </a>
+                    {% else %}
                     <a href="{{base}}{{ post.url }}" class="archive_hyperlink">
-                        <div class="archive_comic_title_item">
-                            {{ post.date | date: "%Y/%m/%-d"}}: {{ post.title }}
-                        </div>
-                    </a>
+                            <div class="archive_comic_title_item">
+                                {{ post.date | date: "%Y/%m/%-d"}}: {{ post.title }}
+                            </div>
+                        </a>
+                    {% endif %}
+                   
                 </li>
                 {% endfor %}
             </ul>

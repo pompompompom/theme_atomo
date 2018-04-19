@@ -9,158 +9,118 @@
 
 <body>
 
-  {% include atomo_header.html %}
-
-  {% assign relevant = site.posts | where:"categories","comic" %} {% assign first_post = site.posts | where:"first","true"
-  %} {% for post in relevant limit:1 %}
-
-  {% assign previous_post = post.previous %}
-  {% for counter in (0..site.posts.size) %}
-    {% assign previous_post = post.previous %}
-    {% if previous_post.categories == post.categories %}
-        {% break %}
-    {% endif %}
-    {% assign previous_post = previous_post.previous %}
-  {% endfor %}
-  {% if previous_post.categories != post.categories %}
-    {% assign previous_post = page %}
-  {% endif %}
-
-
-  {% assign next_post = post.next %}
-  {% for counter in (0..site.posts.size) %}
-    {% assign next_post = post.next %}
-    {% if next_post.categories == post.categories %}
-        {% break %}
-    {% endif %}
-    {% assign next_post = next_post.next %}
-  {% endfor %}
-  {% if next_post.categories != post.categories %}
-    {% assign next_post = post %}
-  {% endif %}
+  {% include atomo_header.html %} {% assign relevant = site.posts | where:"categories","comic" %} {% assign first_post = site.posts
+  | where:"first","true" %} {% for post in relevant limit:1 %} {% assign previous_post = post.previous %} {% for counter
+  in (0..site.posts.size) %} {% assign previous_post = post.previous %} {% if previous_post.categories == post.categories
+  %} {% break %} {% endif %} {% assign previous_post = previous_post.previous %} {% endfor %} {% if previous_post.categories
+  != post.categories %} {% assign previous_post = page %} {% endif %} {% assign next_post = post.next %} {% for counter in
+  (0..site.posts.size) %} {% assign next_post = post.next %} {% if next_post.categories == post.categories %} {% break %}
+  {% endif %} {% assign next_post = next_post.next %} {% endfor %} {% if next_post.categories != post.categories %} {% assign
+  next_post = post %} {% endif %}
 
   <div class="comic_nav_container">
+      {% if relevant.last == post %}
+          <div class="comic_nav_item_disabled">
+            << First </div>
+    
+          <div class="comic_nav_item_disabled">
+            < Previous </div>
+      {% else %}
       <a href='{{base}}{{relevant.last.url}}' class="comic_nav_link">
-    <div class="comic_nav_item">
-      << First
-    </div>
-
+          <div class="comic_nav_item">
+            << First </div>
+        </a>
+    
         <a href='{{base}}{{previous_post.url}}' class="comic_nav_link">
           <div class="comic_nav_item">
             < Previous </div>
         </a>
-        <a href='{{base}}/archives.html' class="comic_nav_link">
+      {% endif %}
+    <a href='{{base}}/archives.html' class="comic_nav_link">
+      <div class="comic_nav_item">
+        Archives
+      </div>
+    </a>
+
+      <div class="comic_nav_item_disabled">
+        Next >
+      </div>
+      <div class="comic_nav_item_disabled">
+        Latest >>
+      </div>
+    </div>
+
+    <div class="atomo_content">
+      <ul class="atomo_post_list">
+        <li>
+          <div class="atomo_item">
+            <div class="atomo_item_i_atomo">
+              I, ATOMO
+            </div>
+            <div class="atomo_episode_title">
+              {{ post.title }}
+            </div>
+
+            <div class="comic_container">
+              {% for pic in post.pictures %}
+              <div class="comic_image_item">
+                <img src="{{ pic | remove: '
+                <p>' | remove: '</p>' | replace: 'BASE', base }}" class="atomo_comic_item" />
+              </div>
+              {% endfor %}
+            </div>
+
+            {% if post.readmore != NULL %}
+            <div class="read_more">
+              <img src="{{BASE}}/assets/poppy_pink_shirt.svg" class="read_more_poppy_pic" /> {% for readmore_post in site.posts %} {% if post.readmore contains readmore_post.title and readmore_post.categories
+              contains "blog" %}
+              <a href='{{base}}{{readmore_post.url}}'>
+                <div class="read_more_text">
+                  READ MORE: {{ readmore_post.title }}
+                </div>
+              </a>
+              {% endif %} {% endfor %}
+            </div>
+            {% endif %} {% include atomo_share.html %}
+          </div>
+        </li>
+
+      </ul>
+    </div>
+
+
+    <div class="comic_nav_container">
+        {% if relevant.last == post %}
+            <div class="comic_nav_item_disabled">
+              << First </div>
+      
+            <div class="comic_nav_item_disabled">
+              < Previous </div>
+        {% else %}
+        <a href='{{base}}{{relevant.last.url}}' class="comic_nav_link">
+            <div class="comic_nav_item">
+              << First </div>
+          </a>
+      
+          <a href='{{base}}{{previous_post.url}}' class="comic_nav_link">
+            <div class="comic_nav_item">
+              < Previous </div>
+          </a>
+        {% endif %}
+      <a href='{{base}}/archives.html' class="comic_nav_link">
         <div class="comic_nav_item">
           Archives
         </div>
       </a>
 
 
-        {% if next_post.title == post.title %}
-        <a href='{{base}}' class="comic_nav_link">
-            {% else %}
-            <a href='{{base}}{{next_post.url}}' class="comic_nav_link">
-                {% endif %}
-          <div class="comic_nav_item">
-            Next >
-          </div>
-        </a>
-        <a href='{{base}}' class="comic_nav_link">
-          <div class="comic_nav_item">
-            Latest >>
-          </div>
-        </a>
+      <div class="comic_nav_item_disabled">
+          Next >
         </div>
-
-        <div class="atomo_content">
-          <ul class="atomo_post_list">
-            <li>
-              <div class="atomo_item">
-                <div class="atomo_item_i_atomo">
-                  I, ATOMO
-                </div>
-                <div class="atomo_episode_title">
-                  {{ post.title }}
-                </div>
-
-                <div class="comic_container">
-                  {% for pic in post.pictures %}
-                  <div class="comic_image_item">
-                    <img src="{{ pic | remove: '
-                <p>' | remove: '</p>' | replace: 'BASE', base }}" class="atomo_comic_item" />
-                  </div>
-                  {% endfor %}
-                </div>
-
-                {% if post.readmore != NULL %}
-                <div class="read_more">
-                  <img src="{{BASE}}/assets/poppy_pink_shirt.svg" class="read_more_poppy_pic" /> {% for readmore_post in site.posts %} {% if post.readmore contains readmore_post.title and readmore_post.categories
-                  contains "blog" %}
-                  <a href='{{base}}{{readmore_post.url}}'>
-                    <div class="read_more_text">
-                      READ MORE: {{ readmore_post.title }}
-                    </div>
-                  </a>
-                  {% endif %} {% endfor %}
-                </div>
-                {% endif %}
-
-                {% include atomo_share.html %}
-                <!--
-              <a class="post-link" href="{{base}}{{ post.url }}">
-              -->
-                <!--
-                    <img src="{{ post.comic | remove: '
-                    <p>' | remove: '</p>' | replace: 'BASE', base }}" class="atomo_comic_item"/>
-                  -->
-                <!--
-              </a>
-            -->
-              </div>
-            </li>
-
-          </ul>
+        <div class="comic_nav_item_disabled">
+          Latest >>
         </div>
-
-
-        <div class="comic_nav_container">
-            <a href='{{base}}{{relevant.last.url}}' class="comic_nav_link">
-          <div class="comic_nav_item">
-            << First
-          </div>
-      
-              <a href='{{base}}{{previous_post.url}}' class="comic_nav_link">
-                <div class="comic_nav_item">
-                  < Previous </div>
-              </a>
-
-        <a href='{{base}}/archives.html' class="comic_nav_link">
-              <div class="comic_nav_item">
-                Archives
-              </div>
-              </a>
-      
-      
-              {% if next_post.title == post.title %}
-              <a href='{{base}}' class="comic_nav_link">
-                  {% else %}
-                  <a href='{{base}}{{next_post.url}}' class="comic_nav_link">
-                      {% endif %}
-                <div class="comic_nav_item">
-                  Next >
-                </div>
-              </a>
-              <a href='{{base}}' class="comic_nav_link">
-                <div class="comic_nav_item">
-                  Latest >>
-                </div>
-              </a>
-              </div>
-
-              {% endfor %}
-
-              {% include atomo_footer.html %}
+      </div>
+      {% endfor %} {% include atomo_footer.html %}
 </body>
-
-
 </html>
