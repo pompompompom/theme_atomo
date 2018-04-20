@@ -23,46 +23,71 @@
       <div class="menu_container">
         <div class="menu_small_logo_share">
           <a href='{{base}}' class="comic_nav_link">
-        <img src="{{base}}/assets/atomo_logo.png" class="atomo_small_logo" />
-        </a>
-        <a href="#">
-            <img src="{{base}}/assets/atomo_white_ins.png" class="comic_share_social" style="margin-left:20px;"/>
-        </a>
-        <a href="#">
+            <img src="{{base}}/assets/atomo_logo.png" class="atomo_small_logo" />
+          </a>
+          <a href="https://www.instagram.com/atomocomics/" target="_blank">
+            <img src="{{base}}/assets/atomo_white_ins.png" class="comic_share_social" style="margin-left:20px;" />
+          </a>
+          <a href="https://www.facebook.com/atomocomics/" target="_blank">
             <img src="{{base}}/assets/atomo_white_fb.png" class="comic_share_social" />
-        </a>
-        <a href="#">
+          </a>
+          <a href="https://twitter.com/atomocomics" target="_blank">
             <img src="{{base}}/assets/atomo_white_twitter.png" class="comic_share_social" />
-        </a>
-        <a href="#">
+          </a>
+          <a href="#" target="_blank">
             <img src="{{base}}/assets/atomo_white_snap.png" class="comic_share_social" />
-        </a>
-        <a href="#">
+          </a>
+          <a href="https://www.reddit.com/r/atomocomics/" target="_blank">
             <img src="{{base}}/assets/atomo_white_reddit.png" class="comic_share_social" />
-        </a>
-      </div>
+          </a>
+        </div>
         <div class="menu_item_container">
-            <a href='{{base}}' class="comic_nav_link">
-          <div class="menu_item">
-            Comic
-          </div>
+          <a href='{{base}}' class="comic_nav_link">
+            {% if page.url contains 'blog.html' or page.url contains 'playground.html' or page.url contains 'about.html' %}
+            <div class="menu_item">
+              Comic
+            </div>
+            {% else %}
+            <div class="menu_item_current">
+              Comic
+            </div>
+            {% endif %}
           </a>
           <a href='{{base}}/blog.html' class="comic_nav_link">
-          <div class="menu_item">
-            Blog
-          </div></a>
+            {% if page.url contains 'blog.html' or page.url contains '/blog/' %}
+            <div class="menu_item_current">
+              Blog
+            </div>
+            {% else %}
+            <div class="menu_item">
+              Blog
+            </div>
+            {% endif %}
+          </a>
           <a href='{{base}}/playground.html' class="comic_nav_link">
-          <div class="menu_item">
-            AI Playground
-          </div>
+            {% if page.url contains 'playground.html' %}
+            <div class="menu_item_current">
+              AI Playground
+            </div>
+            {% else %}
+            <div class="menu_item">
+              AI Playground
+            </div>
+            {% endif %}
           </a>
           <a href='{{base}}/about.html' class="comic_nav_link">
-          <div class="menu_item">
-            About
-          </div>
+            {% if page.url contains 'about.html' %}
+            <div class="menu_item_current">
+              About
+            </div>
+            {% else %}
+            <div class="menu_item">
+              About
+            </div>
+            {% endif %}
           </a>
         </div>
       </div>
     </div>
   </div>
-  </body>
+</body>
