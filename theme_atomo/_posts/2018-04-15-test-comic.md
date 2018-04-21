@@ -7,14 +7,14 @@ comic: BASE/assets/ep1.png
 categories: comic
 readmore: "Hello World"
 pictures: [
-BASE/assets/1_2.svg,
-BASE/assets/1_2.svg,
-BASE/assets/1_2.svg,
-BASE/assets/1_2.svg,
-BASE/assets/1_2.svg,
-BASE/assets/1_2.svg,
-BASE/assets/1_2.svg,
-BASE/assets/1_2.svg,
+BASE/assets/1_2.png,
+BASE/assets/1_2.png,
+BASE/assets/1_2.png,
+BASE/assets/1_2.png,
+BASE/assets/1_2.png,
+BASE/assets/1_2.png,
+BASE/assets/1_2.png,
+BASE/assets/1_2.png,
 ]
 first: "true"
 tags:

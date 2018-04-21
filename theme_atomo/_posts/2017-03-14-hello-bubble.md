@@ -6,14 +6,14 @@ preview: BASE/assets/ep1.png
 comic: BASE/assets/ep1.png
 categories: comic
 pictures: [
-BASE/assets/1_1.svg,
-BASE/assets/1_1.svg,
-BASE/assets/1_1.svg,
-BASE/assets/1_1.svg,
-BASE/assets/1_1.svg,
-BASE/assets/1_1.svg,
-BASE/assets/1_1.svg,
-BASE/assets/1_1.svg,
+BASE/assets/1_1.png,
+BASE/assets/1_1.png,
+BASE/assets/1_1.png,
+BASE/assets/1_1.png,
+BASE/assets/1_1.png,
+BASE/assets/1_1.png,
+BASE/assets/1_1.png,
+BASE/assets/1_1.png,
 ]
 related: [
 "Octopus the Designer",

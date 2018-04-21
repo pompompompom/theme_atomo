@@ -2,7 +2,7 @@
 layout: atomo_blog_item
 title:  "Hello World"
 date:   2017-03-14 01:17:15 -0800
-preview: BASE/assets/1_1.svg
+preview: BASE/assets/1_1.png
 categories: blog
 related: [
 "Octopus the Designer",
@@ -13,7 +13,7 @@ related: [
 tags:
 - blog
 ---
-<img src="BASE/assets/construction.svg" />
+<img src="BASE/assets/construction.png" />
 
 Hello everyone, welcome to Sealicon Valley!
 
