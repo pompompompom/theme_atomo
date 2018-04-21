@@ -5,6 +5,17 @@
   <meta name="description" content="{{ page.excerpt | default: site.description | strip_html | normalize_whitespace | truncate: 160 | escape }}">
   -->
 
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-101851769-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-101851769-2');
+</script>
+
+
 <link href='{{base}}/assets/reset_css.css' rel='stylesheet'>
 <link href='{{base}}/assets/main.css' rel='stylesheet'>
 <link href='{{base}}/assets/atomo.css' rel='stylesheet'>
@@ -39,8 +50,6 @@
 
 <script src="{{base}}/assets/jquery.min.js"></script>
 <script src="{{base}}/assets/jquery.color.js"></script>
-<script src="{{base}}/assets/scrolltest.js"></script>
-<script src="{{base}}/assets/analytics.js"></script>
 
 <title>Atomo Comics</title>
 <meta name="description" content="Webcomic about Tega the Atomo. Learn AI and Robotics while having fun.">
