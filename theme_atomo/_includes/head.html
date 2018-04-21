@@ -1,57 +1,55 @@
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!--
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--
   <meta name="description" content="{{ page.excerpt | default: site.description | strip_html | normalize_whitespace | truncate: 160 | escape }}">
   -->
 
-  <link href='{{base}}/assets/reset_css.css' rel='stylesheet'>
-  <link href='{{base}}/assets/main.css' rel='stylesheet'>
-  <link href='{{base}}/assets/800.css' rel='stylesheet'>
-  <link href='{{base}}/assets/atomo.css' rel='stylesheet'>
+<link href='{{base}}/assets/reset_css.css' rel='stylesheet'>
+<link href='{{base}}/assets/main.css' rel='stylesheet'>
+<link href='{{base}}/assets/800.css' rel='stylesheet'>
+<link href='{{base}}/assets/atomo.css' rel='stylesheet'>
 
-  <link rel="canonical" href="{{ page.url | replace:'index.html','' | absolute_url }}">
-  <link rel="alternate" type="application/rss+xml" title="{{ site.title | escape }}" href="{{ " /feed.xml
-    " | relative_url }}">
-  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Quicksand" />
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
+<link rel="canonical" href="{{ page.url | replace:'index.html','' | absolute_url }}">
+<link rel="alternate" type="application/rss+xml" title="{{ site.title | escape }}" href="{{ " /feed.xml
+  " | relative_url }}">
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Quicksand" />
+<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
 
-  <link href="https://fonts.googleapis.com/css?family=Dosis" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Dosis" rel="stylesheet">
 
-  <link rel="shortcut icon" href="{{base}}/assets/favicon.ico" type="image/x-icon" />
-  <link rel="apple-touch-icon" sizes="57x57" href="{{base}}/assets/apple-touch-icon-57x57.png" />
-  <link rel="apple-touch-icon" sizes="60x60" href="{{base}}/assets/apple-touch-icon-60x60.png" />
-  <link rel="apple-touch-icon" sizes="72x72" href="{{base}}/assets/apple-touch-icon-72x72.png" />
-  <link rel="apple-touch-icon" sizes="76x76" href="{{base}}/assets/apple-touch-icon-76x76.png" />
-  <link rel="apple-touch-icon" sizes="114x114" href="{{base}}/assets/apple-touch-icon-114x114.png" />
-  <link rel="apple-touch-icon" sizes="120x120" href="{{base}}/assets/apple-touch-icon-120x120.png" />
-  <link rel="apple-touch-icon" sizes="144x144" href="{{base}}/assets/apple-touch-icon-144x144.png" />
-  <link rel="apple-touch-icon" sizes="152x152" href="{{base}}/assets/apple-touch-icon-152x152.png" />
-  <link rel="apple-touch-icon" sizes="180x180" href="{{base}}/assets/apple-touch-icon-180x180.png" />
-  <link rel="icon" type="image/png" href="{{base}}/assets/favicon-16x16.png" sizes="16x16" />
-  <link rel="icon" type="image/png" href="{{base}}/assets/favicon-32x32.png" sizes="32x32" />
-  <link rel="icon" type="image/png" href="{{base}}/assets/favicon-96x96.png" sizes="96x96" />
-  <link rel="icon" type="image/png" href="{{base}}/assets/android-chrome-192x192.png" sizes="192x192" />
-  <meta name="msapplication-square70x70logo" content="{{base}}/assets/smalltile.png" />
-  <meta name="msapplication-square150x150logo" content="{{base}}/assets/mediumtile.png" />
-  <meta name="msapplication-wide310x150logo" content="{{base}}/assets/widetile.png" />
-  <meta name="msapplication-square310x310logo" content="{{base}}/assets/largetile.png" />
+<link rel="shortcut icon" href="{{base}}/assets/favicon.ico" type="image/x-icon" />
+<link rel="apple-touch-icon" sizes="57x57" href="{{base}}/assets/apple-touch-icon-57x57.png" />
+<link rel="apple-touch-icon" sizes="60x60" href="{{base}}/assets/apple-touch-icon-60x60.png" />
+<link rel="apple-touch-icon" sizes="72x72" href="{{base}}/assets/apple-touch-icon-72x72.png" />
+<link rel="apple-touch-icon" sizes="76x76" href="{{base}}/assets/apple-touch-icon-76x76.png" />
+<link rel="apple-touch-icon" sizes="114x114" href="{{base}}/assets/apple-touch-icon-114x114.png" />
+<link rel="apple-touch-icon" sizes="120x120" href="{{base}}/assets/apple-touch-icon-120x120.png" />
+<link rel="apple-touch-icon" sizes="144x144" href="{{base}}/assets/apple-touch-icon-144x144.png" />
+<link rel="apple-touch-icon" sizes="152x152" href="{{base}}/assets/apple-touch-icon-152x152.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="{{base}}/assets/apple-touch-icon-180x180.png" />
+<link rel="icon" type="image/png" href="{{base}}/assets/favicon-16x16.png" sizes="16x16" />
+<link rel="icon" type="image/png" href="{{base}}/assets/favicon-32x32.png" sizes="32x32" />
+<link rel="icon" type="image/png" href="{{base}}/assets/favicon-96x96.png" sizes="96x96" />
+<link rel="icon" type="image/png" href="{{base}}/assets/android-chrome-192x192.png" sizes="192x192" />
+<meta name="msapplication-square70x70logo" content="{{base}}/assets/smalltile.png" />
+<meta name="msapplication-square150x150logo" content="{{base}}/assets/mediumtile.png" />
+<meta name="msapplication-wide310x150logo" content="{{base}}/assets/widetile.png" />
+<meta name="msapplication-square310x310logo" content="{{base}}/assets/largetile.png" />
 
-  <script src="{{base}}/assets/jquery.min.js"></script>
-  <script src="{{base}}/assets/jquery.color.js"></script>
-  <script src="{{base}}/assets/scrolltest.js"></script>
-  <script src="{{base}}/assets/analytics.js"></script>
+<script src="{{base}}/assets/jquery.min.js"></script>
+<script src="{{base}}/assets/jquery.color.js"></script>
+<script src="{{base}}/assets/scrolltest.js"></script>
+<script src="{{base}}/assets/analytics.js"></script>
 
-  <title>Atomo Comics</title>
-  <meta name="description" content="Webcomic about Tega the Atomo. Learn AI and Robotics while having fun.">
-  <meta name="keywords" content="Webcomic, Artificial Intelligence, I Atomo, Atomo Comics, Robotics, Robot Comic, Robot Webcomic, STEM, STEM Comic, STEM fun, Cute Robot, Robot, Robots">
+<title>Atomo Comics</title>
+<meta name="description" content="Webcomic about Tega the Atomo. Learn AI and Robotics while having fun.">
+<meta name="keywords" content="Webcomic, Artificial Intelligence, I Atomo, Atomo Comics, Robotics, Robot Comic, Robot Webcomic, STEM, STEM Comic, STEM fun, Cute Robot, Robot, Robots">
 
-  <!-- Facebook Meta Tags -->
-  <meta property="og:url"                content="http://www.iatomo.com" />
-  <meta property="og:type"               content="website" />
-  <meta property="og:title"              content="I, Atomo" />
-  <meta property="og:description"        content="Join the adventure of Tega the Atomo, and learn AI and Robotics!" />
-  <meta property="og:image"              content="{{base}}/assets/atomo_meta_fb.png" />
-</head>
+<!-- Facebook Meta Tags -->
+<meta property="og:url" content="http://www.iatomo.com" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="I, Atomo" />
+<meta property="og:description" content="Join the adventure of Tega the Atomo, and learn AI and Robotics!" />
+<meta property="og:image" content="{{base}}/assets/atomo_meta_fb.png" />
